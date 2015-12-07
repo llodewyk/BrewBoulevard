@@ -2,7 +2,7 @@
 //  DetailViewController.swift
 //  BrewBoulevard
 //
-//  Created by M.I. Hollemans on 07/10/14.
+//  Created by Laura Lodewyk on 12/01/15.
 //  Copyright (c) 2015 Laura Lodewyk. All rights reserved.
 //
 
@@ -18,8 +18,9 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var websiteLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
   
+    var search = Search()
 
-  var searchResult: SearchResult! {
+    var searchResult: SearchResult! {
     didSet {
       if isViewLoaded() {
         updateUI()
@@ -88,18 +89,8 @@ class DetailViewController: UIViewController {
     phoneLabel.text = searchResult.phone
 
     
-    /*var priceText: String
-    if searchResult.price == 0 {
-      priceText = NSLocalizedString("Free", comment: "Price: Free")
-    } else if let text = formatter.stringFromNumber(searchResult.price) {
-      priceText = text
-    } else {
-      priceText = ""
-    }
-    
-    priceButton.setTitle(priceText, forState: .Normal) */
 
-    if let url = NSURL(string: searchResult.largeIcon) {
+    if let url = NSURL(string: searchResult.smallIcon) {
       downloadTask = largeIconImageView.loadImageWithURL(url)
     }
 
@@ -111,34 +102,20 @@ class DetailViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
   @IBAction func close() {
     dismissAnimationStyle = .Slide
     dismissViewControllerAnimated(true, completion: nil)
   }
-  
-  /*@IBAction func openInStore() {
-    if let url = NSURL(string: searchResult.storeURL) {
-      UIApplication.sharedApplication().openURL(url)
-    }*/
-  }
-  
-  /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if segue.identifier == "ShowMenu" {
-      let controller = segue.destinationViewController as! MenuViewController
-      controller.delegate = self
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowInfo"{
+            let showInfo:BreweryViewController = segue.destinationViewController as! BreweryViewController
+            showInfo.searchResult = self.searchResult!
+            showInfo.tableSearch = self.search
+        }
     }
-  }
-}*/
+}
 
 extension DetailViewController: UIViewControllerTransitioningDelegate {
   
@@ -167,23 +144,3 @@ extension DetailViewController: UIGestureRecognizerDelegate {
   }
 }
 
-extension DetailViewController: MenuViewControllerDelegate {
-  func menuViewControllerSendSupportEmail(MenuViewController) {
-    dismissViewControllerAnimated(true) {
-      if MFMailComposeViewController.canSendMail() {
-        let controller = MFMailComposeViewController()
-        controller.setSubject(NSLocalizedString("Support Request", comment: "Email subject"))
-        controller.setToRecipients(["your@email-address-here.com"])
-        controller.mailComposeDelegate = self
-        controller.modalPresentationStyle = .FormSheet
-        self.presentViewController(controller, animated: true, completion: nil)
-      }
-    }
-  }
-}
-
-extension DetailViewController: MFMailComposeViewControllerDelegate {
-  func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
-    dismissViewControllerAnimated(true, completion: nil)
-  }
-}

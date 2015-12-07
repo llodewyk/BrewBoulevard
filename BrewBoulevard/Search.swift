@@ -4,21 +4,6 @@ import UIKit
 typealias SearchComplete = (Bool) -> Void
 
 class Search {
-  enum Category: Int {
-    case All = 0
-    case Music = 1
-    case Software = 2
-    case EBook = 3
-    
-    var entityName: String {
-      switch self {
-      case .All: return ""
-      case .Music: return "musicTrack"
-      case .Software: return "software"
-      case .EBook: return "ebook"
-      }
-    }
-  }
 
   enum State {
     case NotSearchedYet
@@ -26,12 +11,14 @@ class Search {
     case NoResults
     case Results([SearchResult])
   }
+    
+  var resultArray = [SearchResult]()
 
   private(set) var state: State = .NotSearchedYet
   
   private var dataTask: NSURLSessionDataTask? = nil
   
-  func performSearchForText(text: String, category: Category, completion: SearchComplete) {
+  func performSearchForText(text: String, completion: SearchComplete) {
     if !text.isEmpty {
       dataTask?.cancel()
       
@@ -39,7 +26,7 @@ class Search {
       
       state = .Loading
       
-      let url = urlWithSearchText(text, category: category)
+      let url = urlWithSearchText(text)
       
       let session = NSURLSession.sharedSession()
       dataTask = session.dataTaskWithURL(url, completionHandler: {
@@ -58,7 +45,8 @@ class Search {
               if searchResults.isEmpty {
                 self.state = .NoResults
               } else {
-                searchResults.sort(<)
+                //searchResults.sort(<)
+                self.resultArray = searchResults
                 self.state = .Results(searchResults)
               }
               success = true
@@ -76,8 +64,7 @@ class Search {
     }
   }
   
-  private func urlWithSearchText(searchText: String, category: Category) -> NSURL {
-    let entityName = category.entityName
+  private func urlWithSearchText(searchText: String) -> NSURL {
     let locale = NSLocale.autoupdatingCurrentLocale()
     let language = locale.localeIdentifier
     let countryCode = locale.objectForKey(NSLocaleCountryCode) as! String
@@ -88,7 +75,7 @@ class Search {
     
     let url = NSURL(string: urlString)
     
-    println("URL: \(url)")
+    //println("URL: \(url)")
     return url!
   }
   
@@ -155,6 +142,12 @@ class Search {
             else{
                 searchResult.hours = "No hours currently Available"
             }
+            if (brewery["locality"] != nil){
+                searchResult.city = brewery["locality"] as! String
+            }
+            
+            searchResult.id = brewery["id"] as! String
+            
           
             
           searchResults.append(searchResult)

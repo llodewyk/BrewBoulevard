@@ -3,7 +3,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -22,35 +21,39 @@
                     </variation>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="BrewBoulevard" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
-                    <rect key="frame" x="20" y="279" width="441" height="43"/>
+                    <rect key="frame" x="20" y="303" width="441" height="43"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="kId-c2-rCX" secondAttribute="height" multiplier="441:43" id="bWs-kr-xPu"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Superclarendon-Regular" family="Superclarendon" pointSize="36"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="beer" translatesAutoresizingMaskIntoConstraints="NO" id="NDe-Qe-mbv">
-                    <rect key="frame" x="146" y="68" width="189" height="188"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="NDe-Qe-mbv" secondAttribute="height" multiplier="189:188" id="VOK-gP-iWs"/>
-                    </constraints>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="BreweryDB" translatesAutoresizingMaskIntoConstraints="NO" id="P9Y-gU-Oea">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="BreweryDB" translatesAutoresizingMaskIntoConstraints="NO" id="P9Y-gU-Oea">
                     <rect key="frame" x="253" y="392" width="208" height="51"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="P9Y-gU-Oea" secondAttribute="height" multiplier="208:51" id="30T-jw-y17"/>
+                        <constraint firstAttribute="width" constant="208" id="yP2-Vl-otS"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="beer" translatesAutoresizingMaskIntoConstraints="NO" id="NDe-Qe-mbv">
+                    <rect key="frame" x="179" y="180" width="123" height="120"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="NDe-Qe-mbv" secondAttribute="height" multiplier="189:188" id="VOK-gP-iWs"/>
                     </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="0.46510022093333325" green="0.0031024263161009537" blue="0.10210924803134575" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="8ie-xW-0ye" firstAttribute="top" secondItem="P9Y-gU-Oea" secondAttribute="bottom" constant="8" id="2ux-00-X6b"/>
-                <constraint firstAttribute="centerX" secondItem="NDe-Qe-mbv" secondAttribute="centerX" constant="-0.5" id="934-Zw-SBn"/>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="bottom" multiplier="1/3" constant="1" id="Kid-kn-2rF"/>
+                <constraint firstAttribute="trailing" secondItem="8ie-xW-0ye" secondAttribute="trailing" constant="19" id="5JJ-1Z-I0j"/>
                 <constraint firstAttribute="centerX" secondItem="kId-c2-rCX" secondAttribute="centerX" id="Koa-jz-hwk"/>
                 <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
-                <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
-                <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
-                <constraint firstItem="NDe-Qe-mbv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="68" id="e5A-t5-HEt"/>
+                <constraint firstAttribute="centerX" secondItem="NDe-Qe-mbv" secondAttribute="centerX" constant="-0.5" id="LwD-dP-PLp"/>
+                <constraint firstAttribute="trailing" secondItem="P9Y-gU-Oea" secondAttribute="trailing" constant="19" id="PLd-eu-Nyh"/>
+                <constraint firstAttribute="centerY" secondItem="NDe-Qe-mbv" secondAttribute="centerY" constant="48" id="bTf-kO-ZTk"/>
+                <constraint firstItem="NDe-Qe-mbv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="180" id="con-rs-40O"/>
                 <constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="fvb-Df-36g"/>
                 <constraint firstItem="kId-c2-rCX" firstAttribute="top" secondItem="NDe-Qe-mbv" secondAttribute="bottom" constant="23" id="ndW-sa-Luk"/>
             </constraints>

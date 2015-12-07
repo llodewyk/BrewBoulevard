@@ -12,9 +12,8 @@ class SearchViewController: UIViewController {
 
   @IBOutlet weak var searchBar: UISearchBar!
   @IBOutlet weak var tableView: UITableView!
-  @IBOutlet weak var segmentedControl: UISegmentedControl!
   
-  let search = Search()
+  var search = Search()
   
   var landscapeViewController: LandscapeViewController?
   
@@ -85,9 +84,21 @@ class SearchViewController: UIViewController {
         let searchResult = list[indexPath.row]
         detailViewController.searchResult = searchResult
         detailViewController.isPopUp = true
+        detailViewController.search = self.search
       default:
         break
       }
+    }
+    
+    if segue.identifier == "ShowMap"{
+        switch search.state{
+        case .Results(let list):
+             //println(list)
+            let showMap:MapViewController = segue.destinationViewController as! MapViewController
+            showMap.search = self.search
+        default:
+            break
+        }
     }
   }
 
@@ -109,6 +120,8 @@ class SearchViewController: UIViewController {
       }
     }
   }
+    
+    
   
   func showLandscapeViewWithCoordinator(coordinator: UIViewControllerTransitionCoordinator) {
     precondition(landscapeViewController == nil)
@@ -158,8 +171,7 @@ class SearchViewController: UIViewController {
 
 extension SearchViewController: UISearchBarDelegate {
   func performSearch() {
-    if let category = Search.Category(rawValue: segmentedControl.selectedSegmentIndex) {
-      search.performSearchForText(searchBar.text, category: category, completion: {
+      search.performSearchForText(searchBar.text, completion: {
         success in
 
         if let controller = self.landscapeViewController {
@@ -175,7 +187,6 @@ extension SearchViewController: UISearchBarDelegate {
       
       tableView.reloadData()
       searchBar.resignFirstResponder()
-    }
   }
 
   func searchBarSearchButtonClicked(searchBar: UISearchBar) {

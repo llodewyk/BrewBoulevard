@@ -18,6 +18,7 @@ private let displayNamesForKind = [
 ]
 
 class SearchResult {
+  var id = ""
   var name = ""
   var address = ""
   var smallIcon = ""
@@ -28,10 +29,5 @@ class SearchResult {
   var description = ""
   var phone = ""
   var hours = ""
-  //not sure if will end up using this...
-  var kind = ""
-
-  func kindForDisplay() -> String {
-    return displayNamesForKind[kind] ?? kind
-  }
+  var city = ""
 }

@@ -29,6 +29,12 @@
 		7B9B686619E811C300C01AB3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B9B686419E811C300C01AB3 /* Localizable.strings */; };
 		7B9B686A19E816A300C01AB3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B9B686C19E816A300C01AB3 /* InfoPlist.strings */; };
 		7B9B686F19EA94F900C01AB3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B686E19EA94F900C01AB3 /* MenuViewController.swift */; };
+		FD019D0D1C109B93003441C5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD019D0C1C109B93003441C5 /* MapViewController.swift */; };
+		FD019D0F1C109D16003441C5 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD019D0E1C109D16003441C5 /* Location.swift */; };
+		FD019D111C114A1B003441C5 /* 20151203201038-38091-data.gpx in Resources */ = {isa = PBXBuildFile; fileRef = FD019D101C114A1B003441C5 /* 20151203201038-38091-data.gpx */; };
+		FD54CE6D1C13D1BF00EACBD2 /* BreweryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD54CE6C1C13D1BF00EACBD2 /* BreweryViewController.swift */; };
+		FD54CE6F1C14E22300EACBD2 /* BrewSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD54CE6E1C14E22300EACBD2 /* BrewSearch.swift */; };
+		FD54CE711C14E29500EACBD2 /* BrewResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD54CE701C14E29500EACBD2 /* BrewResult.swift */; };
 		FDF7696A1C0F6152009F8373 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDF769691C0F6151009F8373 /* Launch Screen.xib */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +80,12 @@
 		7B9B686B19E816A300C01AB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7B9B686D19E816A700C01AB3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7B9B686E19EA94F900C01AB3 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		FD019D0C1C109B93003441C5 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		FD019D0E1C109D16003441C5 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		FD019D101C114A1B003441C5 /* 20151203201038-38091-data.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "20151203201038-38091-data.gpx"; path = "../../Downloads/20151203201038-38091-data.gpx"; sourceTree = "<group>"; };
+		FD54CE6C1C13D1BF00EACBD2 /* BreweryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreweryViewController.swift; sourceTree = "<group>"; };
+		FD54CE6E1C14E22300EACBD2 /* BrewSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrewSearch.swift; sourceTree = "<group>"; };
+		FD54CE701C14E29500EACBD2 /* BrewResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrewResult.swift; sourceTree = "<group>"; };
 		FDF769691C0F6151009F8373 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +110,7 @@
 		7B3CAAC419DC2A8B00D2D8F7 = {
 			isa = PBXGroup;
 			children = (
+				FD019D101C114A1B003441C5 /* 20151203201038-38091-data.gpx */,
 				7B3CAACF19DC2A8B00D2D8F7 /* BrewBoulevard */,
 				7B3CAAE519DC2A8B00D2D8F7 /* BrewBoulevardTests */,
 				7B3CAACE19DC2A8B00D2D8F7 /* Products */,
@@ -118,14 +131,20 @@
 			children = (
 				7B3CAAD219DC2A8B00D2D8F7 /* AppDelegate.swift */,
 				7B9B684C19E42A2900C01AB3 /* BounceAnimationController.swift */,
+				FD54CE701C14E29500EACBD2 /* BrewResult.swift */,
+				FD54CE6E1C14E22300EACBD2 /* BrewSearch.swift */,
+				FD54CE6C1C13D1BF00EACBD2 /* BreweryViewController.swift */,
 				7B3CAAFE19E3C60300D2D8F7 /* DetailViewController.swift */,
 				7B3CAB0019E3CC4B00D2D8F7 /* DimmingPresentationController.swift */,
 				7B9B685219E5828100C01AB3 /* FadeOutAnimationController.swift */,
 				7B9B684A19E4256000C01AB3 /* GradientView.swift */,
 				7B3CAAD919DC2A8B00D2D8F7 /* Images.xcassets */,
 				7B9B685019E55D1100C01AB3 /* LandscapeViewController.swift */,
+				FDF769691C0F6151009F8373 /* Launch Screen.xib */,
 				7B9B685C19E806D700C01AB3 /* LoadingCell.xib */,
+				FD019D0E1C109D16003441C5 /* Location.swift */,
 				7B3CAAD619DC2A8B00D2D8F7 /* Main.storyboard */,
+				FD019D0C1C109B93003441C5 /* MapViewController.swift */,
 				7B9B686E19EA94F900C01AB3 /* MenuViewController.swift */,
 				7B9B685819E8018D00C01AB3 /* NothingFoundCell.xib */,
 				7B9B685419E6E49300C01AB3 /* Search.swift */,
@@ -136,7 +155,6 @@
 				7B9B684E19E434BA00C01AB3 /* SlideOutAnimationController.swift */,
 				7B3CAAD019DC2A8B00D2D8F7 /* Supporting Files */,
 				7B3CAAFC19E13CFD00D2D8F7 /* UIImageView+DownloadImage.swift */,
-				FDF769691C0F6151009F8373 /* Launch Screen.xib */,
 			);
 			path = BrewBoulevard;
 			sourceTree = "<group>";
@@ -213,7 +231,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0600;
-				ORGANIZATIONNAME = Razeware;
+				ORGANIZATIONNAME = "Laura Lodewyk";
 				TargetAttributes = {
 					7B3CAACC19DC2A8B00D2D8F7 = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -254,6 +272,7 @@
 				7B9B686619E811C300C01AB3 /* Localizable.strings in Resources */,
 				7B9B685A19E806D700C01AB3 /* LoadingCell.xib in Resources */,
 				7B9B686119E80B1500C01AB3 /* SearchResultCell.xib in Resources */,
+				FD019D111C114A1B003441C5 /* 20151203201038-38091-data.gpx in Resources */,
 				FDF7696A1C0F6152009F8373 /* Launch Screen.xib in Resources */,
 				7B9B685619E8018D00C01AB3 /* NothingFoundCell.xib in Resources */,
 				7B3CAADA19DC2A8B00D2D8F7 /* Images.xcassets in Resources */,
@@ -276,6 +295,7 @@
 			files = (
 				7B9B685519E6E49300C01AB3 /* Search.swift in Sources */,
 				7B9B684D19E42A2900C01AB3 /* BounceAnimationController.swift in Sources */,
+				FD019D0F1C109D16003441C5 /* Location.swift in Sources */,
 				7B3CAAD519DC2A8B00D2D8F7 /* SearchViewController.swift in Sources */,
 				7B9B686F19EA94F900C01AB3 /* MenuViewController.swift in Sources */,
 				7B9B685319E5828100C01AB3 /* FadeOutAnimationController.swift in Sources */,
@@ -285,9 +305,13 @@
 				7B9B685119E55D1100C01AB3 /* LandscapeViewController.swift in Sources */,
 				7B3CAAFF19E3C60300D2D8F7 /* DetailViewController.swift in Sources */,
 				7B3CAAD319DC2A8B00D2D8F7 /* AppDelegate.swift in Sources */,
+				FD54CE711C14E29500EACBD2 /* BrewResult.swift in Sources */,
 				7B9B684B19E4256000C01AB3 /* GradientView.swift in Sources */,
+				FD54CE6F1C14E22300EACBD2 /* BrewSearch.swift in Sources */,
 				7B3CAAFD19E13CFD00D2D8F7 /* UIImageView+DownloadImage.swift in Sources */,
+				FD019D0D1C109B93003441C5 /* MapViewController.swift in Sources */,
 				7B9B684F19E434BA00C01AB3 /* SlideOutAnimationController.swift in Sources */,
+				FD54CE6D1C13D1BF00EACBD2 /* BreweryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

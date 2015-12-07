@@ -2,7 +2,7 @@
 //  SearchResultCell.swift
 //  BrewBoulevard
 //
-//  Created by M.I. Hollemans on 02/10/14.
+//  Created by Laura Lodewyk on 12/01/15.
 //  Copyright (c) 2015 Laura Lodewyk. All rights reserved.
 //
 
@@ -19,7 +19,7 @@ class SearchResultCell: UITableViewCell {
     super.awakeFromNib()
     
     let selectedView = UIView(frame: CGRect.zeroRect)
-    selectedView.backgroundColor = UIColor(red: 20/255, green: 160/255, blue: 160/255, alpha: 0.5)
+    selectedView.backgroundColor = UIColor(red: 118/255, green: 10/255, blue: 10/255, alpha: 0.5)
     selectedBackgroundView = selectedView
   }
 
@@ -38,6 +38,16 @@ class SearchResultCell: UITableViewCell {
       downloadTask = smallIconImageView.loadImageWithURL(url)
     }
   }
+    
+    func configureForBrewResult(searchResult: BrewResult) {
+        nameLabel.text = searchResult.name
+        adressLabel.text = searchResult.style
+        smallIconImageView.image = UIImage(named: "Placeholder")
+        
+        if let url = NSURL(string: searchResult.smallIcon) {
+            downloadTask = smallIconImageView.loadImageWithURL(url)
+        }
+    }
     
   override func prepareForReuse() {
     super.prepareForReuse()

@@ -2,7 +2,7 @@
 //  MenuViewController.swift
 //  BrewBoulevard
 //
-//  Created by M.I. Hollemans on 12/10/14.
+//  Created by Laura Lodewyk on 12/01/15.
 //  Copyright (c) 2015 Laura Lodewyk. All rights reserved.
 //
 
