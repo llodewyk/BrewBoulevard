@@ -3,7 +3,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -104,7 +103,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="V6E-UV-ASs">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="V6E-UV-ASs">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -427,7 +426,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
                                     <navigationItem id="tVq-fi-0JY">
-                                        <barButtonItem key="leftBarButtonItem" title="Table View" id="Lid-D9-KZI">
+                                        <barButtonItem key="rightBarButtonItem" title="Table View" id="Lid-D9-KZI">
                                             <connections>
                                                 <segue destination="vXZ-lx-hvc" kind="show" identifier="ShowTable" id="zkV-YI-yb7"/>
                                             </connections>
@@ -435,90 +434,88 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BjM-oh-K0I">
-                                <rect key="frame" x="141" y="53" width="250" height="54"/>
-                                <fontDescription key="fontDescription" name="Superclarendon-Regular" family="Superclarendon" pointSize="16"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rjh-pU-fVa">
-                                <rect key="frame" x="0.0" y="243" width="600" height="365"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rjh-pU-fVa">
+                                <rect key="frame" x="0.0" y="250" width="600" height="350"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="mGG-bI-mYz" id="7tW-SH-iSi"/>
+                                    <outlet property="delegate" destination="mGG-bI-mYz" id="D5C-dU-z7J"/>
+                                </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dyl-2Y-coK">
-                                <rect key="frame" x="399" y="69" width="107" height="21"/>
-                                <fontDescription key="fontDescription" name="Superclarendon-Regular" family="Superclarendon" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4YC-lp-org">
-                                <rect key="frame" x="514" y="69" width="70" height="21"/>
-                                <fontDescription key="fontDescription" name="Superclarendon-Regular" family="Superclarendon" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2pq-HY-rUc">
-                                <rect key="frame" x="11" y="53" width="94" height="94"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Description" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsN-Wq-Zbn">
-                                <rect key="frame" x="141" y="107" width="250" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="tsN-Wq-Zbn" secondAttribute="height" multiplier="37:15" id="ayb-Po-hcL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Superclarendon-Regular" family="Superclarendon" pointSize="10"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Website" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdJ-6x-8fS">
-                                <rect key="frame" x="11" y="155" width="117" height="34"/>
-                                <fontDescription key="fontDescription" name="Superclarendon-Regular" family="Superclarendon" pointSize="8"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Phone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ha-CW-Vvf">
-                                <rect key="frame" x="11" y="187" width="108" height="21"/>
-                                <fontDescription key="fontDescription" name="Superclarendon-Regular" family="Superclarendon" pointSize="8"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Hours" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iav-qB-tWI">
-                                <rect key="frame" x="417" y="118" width="139" height="98"/>
-                                <fontDescription key="fontDescription" name="Superclarendon-Regular" family="Superclarendon" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IQw-e7-LLr">
+                                <rect key="frame" x="-20" y="44" width="640" height="198"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AUE-zW-pFg">
+                                        <rect key="frame" x="20" y="0.0" width="600" height="237"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2pq-HY-rUc">
+                                                <rect key="frame" x="8" y="8" width="60" height="58"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BjM-oh-K0I">
+                                                <rect key="frame" x="87" y="22" width="505" height="29"/>
+                                                <fontDescription key="fontDescription" name="Superclarendon-Regular" family="Superclarendon" pointSize="14"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Hours:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3R-Oa-Z7s">
+                                                <rect key="frame" x="8" y="72" width="42" height="26"/>
+                                                <fontDescription key="fontDescription" name="Superclarendon-Regular" family="Superclarendon" pointSize="10"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Hours" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iav-qB-tWI">
+                                                <rect key="frame" x="8" y="96" width="457" height="40"/>
+                                                <fontDescription key="fontDescription" name="Superclarendon-Regular" family="Superclarendon" pointSize="11"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Description" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsN-Wq-Zbn">
+                                                <rect key="frame" x="8" y="133" width="584" height="86"/>
+                                                <fontDescription key="fontDescription" name="Superclarendon-Regular" family="Superclarendon" pointSize="11"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.46510022090000003" green="0.0031024263160000002" blue="0.102109248" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="tsN-Wq-Zbn" secondAttribute="trailing" constant="8" id="3sj-Lt-PY1"/>
+                                            <constraint firstItem="iav-qB-tWI" firstAttribute="leading" secondItem="AUE-zW-pFg" secondAttribute="leading" constant="8" id="7Xf-ga-ah4"/>
+                                            <constraint firstItem="2pq-HY-rUc" firstAttribute="leading" secondItem="AUE-zW-pFg" secondAttribute="leading" constant="8" id="8Im-zZ-blh"/>
+                                            <constraint firstItem="iav-qB-tWI" firstAttribute="top" secondItem="i3R-Oa-Z7s" secondAttribute="bottom" constant="3" id="BIm-Ci-YTE"/>
+                                            <constraint firstItem="i3R-Oa-Z7s" firstAttribute="leading" secondItem="AUE-zW-pFg" secondAttribute="leading" constant="8" id="DUL-4i-82A"/>
+                                            <constraint firstItem="BjM-oh-K0I" firstAttribute="leading" secondItem="2pq-HY-rUc" secondAttribute="trailing" constant="8" id="JYd-gd-tRp"/>
+                                            <constraint firstItem="BjM-oh-K0I" firstAttribute="top" secondItem="AUE-zW-pFg" secondAttribute="top" id="QJ1-gT-r1V"/>
+                                            <constraint firstItem="2pq-HY-rUc" firstAttribute="top" secondItem="AUE-zW-pFg" secondAttribute="top" constant="8" id="aKp-aU-Gmt"/>
+                                            <constraint firstItem="i3R-Oa-Z7s" firstAttribute="top" secondItem="2pq-HY-rUc" secondAttribute="bottom" constant="6" id="hCP-tn-j9L"/>
+                                            <constraint firstAttribute="bottom" secondItem="tsN-Wq-Zbn" secondAttribute="bottom" id="qEw-gM-vPz"/>
+                                            <constraint firstItem="tsN-Wq-Zbn" firstAttribute="leading" secondItem="AUE-zW-pFg" secondAttribute="leading" constant="8" id="r4u-Rn-Sul"/>
+                                            <constraint firstItem="iav-qB-tWI" firstAttribute="top" secondItem="i3R-Oa-Z7s" secondAttribute="bottom" constant="-8" id="ur6-gl-5KK"/>
+                                            <constraint firstItem="iav-qB-tWI" firstAttribute="top" secondItem="2pq-HY-rUc" secondAttribute="bottom" constant="30" id="wed-aE-CDs"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.46510022090000003" green="0.0031024263160000002" blue="0.102109248" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="2pq-HY-rUc" firstAttribute="leading" secondItem="lv9-va-mut" secondAttribute="leadingMargin" constant="-5" id="68R-B1-5FR"/>
-                            <constraint firstItem="BjM-oh-K0I" firstAttribute="leading" secondItem="2pq-HY-rUc" secondAttribute="trailing" constant="36" id="75T-cH-Vaz"/>
-                            <constraint firstItem="tsN-Wq-Zbn" firstAttribute="leading" secondItem="2pq-HY-rUc" secondAttribute="trailing" constant="36" id="CrZ-cQ-TlB"/>
-                            <constraint firstItem="iav-qB-tWI" firstAttribute="leading" secondItem="tsN-Wq-Zbn" secondAttribute="trailing" constant="8" id="PV4-5N-ZmF"/>
-                            <constraint firstItem="tsN-Wq-Zbn" firstAttribute="top" secondItem="BjM-oh-K0I" secondAttribute="bottom" id="Shr-Uu-5Iz"/>
-                            <constraint firstItem="4YC-lp-org" firstAttribute="leading" secondItem="Dyl-2Y-coK" secondAttribute="trailing" constant="8" id="Wni-be-gVo"/>
-                            <constraint firstItem="iav-qB-tWI" firstAttribute="top" secondItem="Dyl-2Y-coK" secondAttribute="bottom" constant="31" id="cW0-7W-3c6"/>
-                            <constraint firstItem="YdJ-6x-8fS" firstAttribute="top" secondItem="2pq-HY-rUc" secondAttribute="bottom" constant="8" id="fJh-Jb-T1t"/>
-                            <constraint firstItem="YdJ-6x-8fS" firstAttribute="leading" secondItem="lv9-va-mut" secondAttribute="leadingMargin" id="jh4-8a-9LN"/>
-                            <constraint firstAttribute="width" secondItem="BjM-oh-K0I" secondAttribute="width" id="mLq-yl-NE6"/>
-                            <constraint firstItem="6Ha-CW-Vvf" firstAttribute="leading" secondItem="lv9-va-mut" secondAttribute="leadingMargin" id="n71-uv-F51"/>
+                            <constraint firstItem="rjh-pU-fVa" firstAttribute="width" secondItem="lv9-va-mut" secondAttribute="width" id="IV8-bA-Q5J"/>
+                            <constraint firstItem="rjh-pU-fVa" firstAttribute="top" secondItem="IQw-e7-LLr" secondAttribute="bottom" id="U5j-r0-DlH"/>
+                            <constraint firstItem="A6j-NG-jDY" firstAttribute="top" secondItem="rjh-pU-fVa" secondAttribute="bottom" id="aa9-6v-4iJ"/>
                             <constraint firstAttribute="width" secondItem="Aiv-kf-ZCT" secondAttribute="width" id="rWF-3v-vQ7"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="brewAdress" destination="Dyl-2Y-coK" id="D3Y-7x-KWM"/>
-                        <outlet property="brewCity" destination="4YC-lp-org" id="seB-kW-ho1"/>
                         <outlet property="brewDescription" destination="tsN-Wq-Zbn" id="KId-NU-3ZW"/>
                         <outlet property="brewHours" destination="iav-qB-tWI" id="jtc-Rq-Yny"/>
                         <outlet property="brewName" destination="BjM-oh-K0I" id="fXj-Jo-1Hh"/>
-                        <outlet property="brewPhone" destination="6Ha-CW-Vvf" id="zI0-Yx-4pG"/>
-                        <outlet property="brewWebsite" destination="YdJ-6x-8fS" id="Z3s-5F-HaG"/>
                         <outlet property="iconImage" destination="2pq-HY-rUc" id="csy-NT-7Zm"/>
                         <outlet property="tableView" destination="rjh-pU-fVa" id="wmL-XK-U4t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Hu-Sg-lqt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2157" y="688"/>
+            <point key="canvasLocation" x="2176" y="746"/>
         </scene>
     </scenes>
     <resources>

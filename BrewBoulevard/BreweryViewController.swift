@@ -12,7 +12,6 @@ class BreweryViewController: UIViewController {
     
     var searchResult: SearchResult?
     var search = BrewSearch()
-    
     var tableSearch = Search()
     
     
@@ -20,12 +19,12 @@ class BreweryViewController: UIViewController {
     
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var brewName: UILabel!
-    @IBOutlet weak var brewAdress: UILabel!
-    @IBOutlet weak var brewCity: UILabel!
+    //@IBOutlet weak var brewAdress: UILabel!
+    //@IBOutlet weak var brewCity: UILabel!
     @IBOutlet weak var brewHours: UILabel!
     @IBOutlet weak var brewDescription: UILabel!
-    @IBOutlet weak var brewWebsite: UILabel!
-    @IBOutlet weak var brewPhone: UILabel!
+    //@IBOutlet weak var brewWebsite: UILabel!
+    //@IBOutlet weak var brewPhone: UILabel!
     
      var downloadTask: NSURLSessionDownloadTask?
     
@@ -43,13 +42,13 @@ class BreweryViewController: UIViewController {
             if !success {
                 self.showNetworkError()
             }
-            //println("it wrked")
             
             self.tableView.reloadData()
         })
+        tableView.reloadData()
         
         
-        tableView.contentInset = UIEdgeInsets(top: 108, left: 0, bottom: 0, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         tableView.rowHeight = 80
         
         var cellNib = UINib(nibName: TableViewCellIdentifiers.searchResultCell, bundle: nil)
@@ -68,12 +67,12 @@ class BreweryViewController: UIViewController {
                 downloadTask = iconImage.loadImageWithURL(url)
             }
             brewName.text = result.name
-            brewAdress.text = result.address
-            brewCity.text = result.city
+            //brewAdress.text = result.address
+            //brewCity.text = result.city
             brewHours.text = result.hours
             brewDescription.text = result.description
-            brewWebsite.text = result.website
-            brewPhone.text = result.phone
+            //brewWebsite.text = result.website
+            //brewPhone.text = result.phone
             
         }
         
