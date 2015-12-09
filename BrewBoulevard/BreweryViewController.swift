@@ -95,7 +95,7 @@ class BreweryViewController: UIViewController {
     func showNetworkError() {
         let alert = UIAlertController(
             title: NSLocalizedString("Whoops...", comment: "Error alert: title"),
-            message: NSLocalizedString("There was an error reading from the iTunes Store. Please try again.", comment: "Error alert: message"),
+            message: NSLocalizedString("There was an error... Please try again.", comment: "Error alert: message"),
             preferredStyle: .Alert)
         
         let action = UIAlertAction(title: NSLocalizedString("OK", comment: "Error alert: cancel button"), style: .Default, handler: nil)
